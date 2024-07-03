@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #img2{
+    display: none;
+}
+#img3{
+    display: none;
+}
+#img4{
+  display: none;
+}
+#img5{
+  display:none;
+}
+#img6{
+  display: none;
+}
+#img7{
+  display:none;
+}
+.men{
+  display: flex;
+    margin-top: 220px;
+    margin-left: 920px;
+     width: 190px;
+  height: 254px; 
+}
+.men h3{
+        position:absolute;
+        margin-top: -280px;
+        margin-left: 30px;
+        width: 355px;
+        word-break:normal;
+        font-family: fantasy;
+        color:white;
+          background: linear-gradient(1400deg,#ccc5b9,#e9ecef,#ccc5b9);
+          color:transparent;
+          background-clip: text;
+}
+.men img{
+  margin-top: -770px;
+  width: 360px;
+    height: 430px;
+    border: 3px solid #e9edc9;
+}
+#right{
+    position: absolute;
+    border: none;
+    background: none;
+    margin-left: 330px;
+    margin-top: -550px;
+    color: #e9edc9;
+}
+#left{
+    position:absolute;
+    border: none;
+    background: none;
+    margin-left: -60px;
+     margin-top: -550px;
+    color: #e9edc9;
+}
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="loader" id="loader">
+            <img  id="img11" onclick="imageli()">
+          </div>
+          <div class="men">
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQiALpGf_ULXLFkbL7QXGIJTAuoi89L4wbLboKgme9ctwUTDH9nHTrZZekzsOdG78tdSd0vRR4mnj1f-_cBL_s66iSyxXDcuvqInresfPKq&usqp=CAE" alt="img1" id="men">
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSofC9DWawiZCkP7c5dJ5vyLPvhvg4h7a9UoJiVKUo0dDT9HZsiJkxdPs7LrTdVm59w-C5xTXIyQ7f-OzTA97WEpymv1tKkTZjd4ieLx-Z_&usqp=CAE" alt="img1" id="img2">
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSofzlDdIr_195M4LkaRLNJ5p69_PlB_ZJUTE7NQUQd4F_ShereKYRND0xhzfIY6R4BNTwvKZ_C-BgR3R-9jE9i0EL3o1QJkwK5HXZk-nBexHA6816E_Tf_Yw&usqp=CAE" alt="img3" id="img3">
+            <button onclick="right()" id="right"><svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+              </svg> </button>
+              <button onclick="left()" id="left"><svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+              </svg></button>
+              <h3>Trendsetting Looks for Modern Lives</h3>
+            </div>
+</body>
+<script>
+    var slidess=['https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSofC9DWawiZCkP7c5dJ5vyLPvhvg4h7a9UoJiVKUo0dDT9HZsiJkxdPs7LrTdVm59w-C5xTXIyQ7f-OzTA97WEpymv1tKkTZjd4ieLx-Z_&usqp=CAE',
+        'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQDZ_iSrPZa2UDNelj_d9QxJZ5T5UEcIAuqBSiBNMXpZBf6vpDqxx54UwUFxHYt--vtkKTgzBT3NrO4he4snWzxXcCWxZkFsm2KwT-2R-j7ZUPQc24AZ54K8A&usqp=CAE',
+        'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR-6ZaI0z27I55UjWmSfsSPfGl2tYJ1QtyImBoePRsaZkWT2nFTWtQuAcO7A2MwN4Eck1gdRuvu2SaGBViKenG35ZL6od4IXo-JMELx1_NH&usqp=CAE'
+    ];
+    var index=0;
+    var dur=3000;
+    function imgslide(){
+        document.getElementById('img11').src=slidess[index]
+        index++;
+        if(index==slidess.length){index=0;}
+        setTimeout("imgslide()",dur);
+    }
+    imgslide();
+    let x=document.getElementById('men');
+        let x1=document.getElementById('img2');
+        let x2=document.getElementById('img3');
+        ind=1;
+    function right(){
+        if(ind==1){
+    x.style.display="none";
+    x2.style.display="none";
+    x1.style.display="inline";
+    ind+=1
+        }
+        else
+        {
+    x.style.display="none";
+    x1.style.display="none";
+    x2.style.display="inline";
+    ind+=1
+    console.log(ind);
+    }
+    if(ind>=4){
+        x2.style.display="none";
+    x1.style.display="none";
+    x.style.display="inline";
+    ind=1;
+    }
+}
+    function left(){
+        if(ind==3){
+    x.style.display="none";
+    x2.style.display="none";
+    x1.style.display="inline";
+    ind-=1
+        }
+        else
+        {
+
+    x2.style.display="none";
+    x1.style.display="none";
+    x.style.display="inline";
+    ind-=1
+    }
+    if(ind<1){
+        x.style.display="none";
+    x1.style.display="none";
+    x2.style.display="inline";
+    ind=3;
+    }
+}
+   
+
+</script>
+</html>
